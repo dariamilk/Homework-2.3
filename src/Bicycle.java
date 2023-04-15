@@ -1,8 +1,14 @@
-public class Bicycle {
-    public String modelName;
-    public int wheelsCount;
+public class Bicycle extends Vehicle {
 
-    public void updateTyre() {
-        System.out.println("Меняем покрышку");
+    public Bicycle(String modelName, int wheelsCount) {
+        super(modelName, wheelsCount);
+    }
+
+    @Override
+    public void service() {
+        System.out.println("Обслуживаем " + super.getModelName());
+        for (int i = 0; i < super.getWheelsCount(); i++) {
+            super.updateTyre();
+        }
     }
 }
